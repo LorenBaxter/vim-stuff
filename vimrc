@@ -8,7 +8,7 @@ if v:progname =~? "evim"
 endif
 
 " Colores!
-colorscheme Molokai_Edited
+colorscheme Mustang_Vim_Colorscheme_by_hcalves
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -85,10 +85,8 @@ nnoremap <C-l> <C-w>l
 " Make CommandT easier
 nnoremap <leader>t :CommandT<cr>
 
-if has("vms")
-  set nobackup		" do not keep a backup file, use versions instead
-else
-  set backup		" keep a backup file
+set nobackup		" do not keep a backup file, use versions instead
+set nowritebackup "f backups
 endif
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
