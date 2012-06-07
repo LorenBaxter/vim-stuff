@@ -22,6 +22,7 @@ function ga
 	git add $argv
 end;
 
+# Show git branch in prompt
 function fish_prompt
   set_color $fish_color_cwd
   echo -n (pwd)
