@@ -8,7 +8,7 @@ if v:progname =~? "evim"
 endif
 
 " Colores!
-colorscheme Mustang_Vim_Colorscheme_by_hcalves
+colorscheme ir_black
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -21,7 +21,7 @@ call pathogen#infect()
 filetype indent plugin on
 g:sparkup (Default: 'sparkup')
 augroup sparkup_types
-  autocmd! " Remove ALL autocommands for the current group.
+  autocmd! 
   autocmd FileType mustache,php,htmldjango runtime! ftplugin/html/sparkup.vim
 augroup END
 
@@ -67,7 +67,6 @@ set hlsearch
 nnoremap <tab> %
 vnoremap <tab> %
 nnoremap <leader><space> :noh<cr>
-nnoremap ; :
 
 " Fix regex according to that tutorial.
 nnoremap / /\v
@@ -87,6 +86,7 @@ nnoremap <leader>t :CommandT<cr>
 
 set nobackup		" do not keep a backup file, use versions instead
 set nowritebackup "f backups
+set noswapfile
 set history=50		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
@@ -155,3 +155,6 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+
+" Turn on filetype plugin for NERD Commenter
+filetype plugin on
